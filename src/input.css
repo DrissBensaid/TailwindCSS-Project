@@ -1,0 +1,165 @@
+/* 1. Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* 2. Tailwind core */
+@import "tailwindcss";
+
+
+/* 3. Theme customization using CSS-first (@theme) */
+@theme {
+  --breakpoint-sm: 340px;
+  --breakpoint-md: 540px;
+  --breakpoint-lg: 768px;
+  --breakpoint-xl: 1180px;
+
+  --font-jost: "Jost", "Self Sans", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif;
+
+  --font-lobster: "Lobster", "Self Sans", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif;
+}
+
+/* 4. Custom container padding (12px default, 32px at md) */
+@utility container {
+  padding-inline: 12px;
+  margin-inline: auto;
+
+  @variant md {
+    padding-inline: 32px;
+  }
+}
+
+/* 5. Font family utilities */
+@layer utilities {
+  .font-jost {
+    font-family: var(--font-jost);
+  }
+
+  .font-lobster {
+    font-family: var(--font-lobster);
+  }
+}
+
+
+
+html{
+    @apply overflow-x-hidden scroll-smooth;
+}
+/* 6. Keyframes */
+
+/* Move (bounce up and down) */
+@keyframes move {
+  50% {
+    transform: translateY(-1rem);
+  }
+}
+
+/* Rotate */
+@keyframes rotate-forever {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scale-up (pulse effect) */
+@keyframes scale-up {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+/* 7. Animation utilities */
+@layer utilities {
+  .animate-move {
+    animation: move 3s linear infinite;
+  }
+
+  .animate-rotate {
+    animation: rotate-forever 15s linear infinite;
+  }
+
+  .animate-scale-up {
+    animation: scale-up 1.5s ease-in-out infinite;
+  }
+}
+
+/* 8. Base styles */
+@layer base {
+  body {
+    @apply bg-green-950 text-white font-jost tracking-wider;
+  }
+
+  section {
+    @apply py-20 md:py-28;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl xl:text-5xl font-bold;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl xl:text-4xl ;
+  }
+
+  h2 {
+    @apply text-xl md:text-2xl xl:text-3xl ;
+  }
+}
+
+/* 9. Components */
+
+@layer components {
+  /* Navigation link */
+  .nav-link {
+    @apply text-lg font-bold duration-300;
+  }
+
+  .nav-link:hover {
+    @apply text-yellow-500;
+  }
+
+  /* Title classes */
+  .title {
+    @apply font-lobster text-yellow-500;
+  }
+
+  .title-sub {
+    @apply font-lobster text-xl md:text-2xl lg:text-3xl text-yellow-500 mb-2;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply border border-yellow-300 bg-yellow-500 rounded-md px-5 py-2 duration-300;
+  }
+
+  .btn span {
+    @apply font-bold;
+  }
+
+  .btn:hover {
+    @apply opacity-90;
+  }
+
+  .btn_outline {
+    @apply bg-transparent;
+  }
+
+  .btn_outline:hover {
+    @apply bg-yellow-500;
+  }
+
+
+}
+
+/* reviwers SWIPER SLIDER */
+.swiper-pagination-bullet {
+    @apply bg-green-500 w-2 h-2;
+}
