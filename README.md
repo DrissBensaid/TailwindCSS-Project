@@ -7,10 +7,10 @@ This project is a plant website built using Tailwind CSS for styling and JavaScr
 ```
 plant-website
 ├── src
-│   ├── css
-│   │   └── input.css
+│   │   
 │   ├── js
 │   │   └── main.js
+    └── input.css
 │   ├── index.html
 │   └── output.css
 ├── assets
